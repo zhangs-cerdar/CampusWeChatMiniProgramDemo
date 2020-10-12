@@ -1,0 +1,19 @@
+<!--pages/logon/avatar/avatar.wxml-->
+
+
+  <!-- 选择头像 -->
+  <view class="header"  >
+    <open-data class="" type="userAvatarUrl" ></open-data>
+  </view>
+  <!-- 输入昵称 -->
+<view class='form'>
+  <open-data type="userNickName" lang="zh_CN"></open-data>  
+</view> 
+
+ <view class='jiange01'></view>
+ <view class='jiange01'></view>
+ <!-- 登录按钮 -->
+  <view class='denglu' bindtap='tiaozhuan'> 
+   <text class='wenzi01'> 开启校园生活 </text>
+</view> 
+ <view class='jiange01'></view>

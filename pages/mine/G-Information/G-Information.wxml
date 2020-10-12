@@ -1,0 +1,170 @@
+
+<view class='backgound-c pa-l30 pa-r30 pa-t20 pa-b20 fo-g fo-26'>
+  完善个人信息
+</view>
+
+<view class='bg-w' style='padding:0 30rpx'>
+
+<!-- 头像 -->
+  <view class='panel panel-between border-b item-center' style='padding:30rpx 0' bindtap=''>
+    <view class='fo-30'>头像</view>
+    <view class='panel-end item-center'>
+    
+     <image bindtap='changeAvatar' data-avatar="{{getUser.avatar}}" src='{{getUser.avatar}}'  style='height:100rpx;width:100rpx;border-radius:100rpx' mode='aspectFill'></image>
+
+     <image src='/img/right.png' class='icon-25 ma-l20'></image>
+
+    </view>
+  </view>
+ 
+  <!-- 昵称 -->
+  <view class='panel panel-between border-b item-center' style='padding:30rpx 0'>
+    <view class='fo-30 fo-whith'>昵称</view>
+    <view class='panel-end item-center '>
+
+       <input class='fo-30 fo-g text-right' maxlength="8"  bindinput='ddinput' data-username="{{getUser.username}}" placeholder="请填写昵称" value='{{getUser.username}}'></input>
+      
+
+      <!-- <image src='/img/right.png' class='icon-25 ma-l20'></image> -->
+    </view>
+  </view>
+  <!-- 手机号 -->
+  <!-- <view class='panel panel-between border-b item-center' style='padding:30rpx 0'>
+    <view class='fo-30 fo-whith'>手机号</view>
+    <view class='panel-end item-center'>
+      <input name="phone" type='number' maxlength="11" class='fo-30 fo-g text-right' placeholder="请填写11位手机号" value='{{getUser.phone}}'></input>
+    
+    </view>
+  </view> -->
+
+<!-- 性别 -->
+ <view class='panel panel-between border-b item-center' style='padding:30rpx 0' >
+    <view class='fo-30 fo-whith'>性别</view>
+    <view class='panel-end item-center' >
+      
+       <picker wx:if='{{getUser.gender==null}}' bindchange='tiaozhuan3'  data-gender="{{getUser.gender}}"  value="{{getUser.gender}}" range="{{array}}">
+       <view class='sex-wz fo-30 fo-g text-right'>请选择性别</view>
+       </picker>
+       <picker wx:if='{{getUser.gender !=null}}' bindchange='tiaozhuan3'  data-gender="{{getUser.gender}}"  value="{{getUser.gender}}" range="{{array}}">
+        <view class='sex-wz fo-30 fo-g text-right'>{{array[getUser.gender]}}</view>
+       </picker>
+
+      <image src='/img/right.png' class='icon-25 ma-l20'></image>
+    </view>
+  </view>
+<!-- 生日 -->
+ <view class='panel panel-between border-b item-center' style='padding:30rpx 0'>
+    <view class='fo-30 fo-whith'>生日</view>
+    <view class='panel-end item-center'>
+       <picker mode="date" value='{{getUser.dobLabel}}' start="1900-01-01" end="2050-12-31" bindchange='tiaozhuan4'>
+       <view wx:if='{{getUser.dobLabel==null}}' class='fo-30 fo-g text-right'>选择生日</view>
+      <view wx:else class='fo-30 fo-g text-right'>{{getUser.dobLabel}}</view>
+      </picker>
+      <image src='/img/right.png' class='icon-25 ma-l20'></image>
+    </view>
+  </view>
+
+<!-- 家乡 -->
+ <view class='panel panel-between border-b item-center' style='padding:30rpx 0'>
+    <view class='fo-30 fo-whith'>家乡</view>
+    <view class='panel-end item-center'>
+    
+
+      <picker wx:if='{{getUser.province==null}}' mode="region" bindchange="tiaozhuan5"  >
+      <view class='fo-30 fo-g text-right'>
+      北京市/北京市/东城区
+      </view>
+      </picker>
+
+      <picker wx:if='{{getUser.province !=null}}'  mode="region" bindchange="tiaozhuan5"  >
+      <view class='fo-30 fo-g text-right'>
+      {{getUser.province}}/{{getUser.city}}/{{getUser.area}}
+      </view>
+      </picker>
+
+
+      <image src='/img/right.png' class='icon-25 ma-l20'></image>
+    </view>
+  </view>
+ <!-- 学校 -->
+ <view class='panel panel-between border-b item-center' style='padding:30rpx 0'>
+    <view class='fo-30 fo-whith'>学校</view>
+    <view class='panel-end item-center'>
+
+    <view class='fo-30 fo-g text-right'>常熟理工学院</view>
+
+ </view>
+  </view>
+<!-- 院系 -->
+ <view class='panel panel-between border-b item-center' style='padding:30rpx 0' data-major="{{findUser.major}}" bindtap="">
+    <view class='fo-30 fo-whith'>院系</view>
+    <view class='panel-end item-center'>
+    
+    
+       <view class='fo-30 fo-g text-right' wx:if="{{getUser.academy !=null }}" bindtap="tiaozhuan7" >{{getUser.academy}}</view>
+       <view class='fo-30 fo-g text-right' wx:if="{{getUser.academy ==null }}"  bindtap="tiaozhuan7" >选择院系</view>
+
+     
+      <image src='/img/right.png' class='icon-25 ma-l20'></image>
+    </view>
+  </view>
+<!-- 专业 -->
+ <view class='panel panel-between border-b item-center' style='padding:30rpx 0' bindtap="">
+    <view class='fo-30 fo-whith2'>专业</view>
+    <view class='panel-end item-center'>
+
+       
+
+      <view wx:if="{{getUser.major !=null }}" class='fo-30 fo-g text-right' bindtap="tiaozhuan8" > {{getUser.major}}</view>
+      <view wx:if="{{getUser.major ==null }}" class='fo-30 fo-g text-right' bindtap="tiaozhuan8" > 选择专业</view>
+
+
+ <image src='/img/right.png' class='icon-25 ma-l20'></image>
+    </view>
+  </view>
+ 
+  <!-- 学历 -->
+ <view class='panel panel-between border-b item-center' style='padding:30rpx 0'  bindtap='tiaozhuan9'>
+    <view class='fo-30 fo-whith2'>学历</view>
+    <view class='panel-end item-center'>
+    
+       <view wx:if="{{getUser.education ==null }}" class='fo-30 fo-g text-right'>选择学历</view>
+       <view wx:if="{{getUser.education !=null }}" class='fo-30 fo-g text-right'>{{getUser.education}} </view>
+      
+
+      <image src='/img/right.png' class='icon-25 ma-l20'></image>
+    </view>
+  </view>
+  <!-- 入学年份 -->
+ <view class='panel panel-between  item-center' style='padding:30rpx 0'  bindtap='tiaozhuan10' >
+    <view class='fo-30 '>入学年份</view>
+    <view class='panel-end item-center'>
+   
+      
+       <view wx:if="{{getUser.enrolmentDate ==null }}" class='fo-30 fo-g text-right'>选择入学年份</view>
+       <view wx:if="{{getUser.enrolmentDate !=null }}" class='fo-30 fo-g text-right'>{{getUser.enrolmentDate}} </view>
+     <image src='/img/right.png' class='icon-25 ma-l20'></image>
+    </view>
+  </view>
+
+
+
+</view>
+
+<view class='pa-30'>
+  <button class='btnszz'  bindtap="makeRequest">保存修改</button>
+</view>
+
+
+
+<!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取用户手机号 </button>   -->
+
+
+
+
+
+
+
+
+
+

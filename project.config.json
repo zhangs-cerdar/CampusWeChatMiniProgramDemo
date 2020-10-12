@@ -1,0 +1,62 @@
+{
+	"projectid": "1109711657_%E6%A0%A1%E5%9B%ADN%E5%A4%9A%E6%A0%B7%E5%BC%8F%E4%B8%80",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"uglifyFileName": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"remoteDebugLogEnable": false,
+		"useAlphaLib": true
+	},
+	"qqLibVersion": "1.6.3",
+	"compileType": "miniprogram",
+	"createTime": 1566309509104,
+	"accessTime": 1566309509104,
+	"packOptions": {
+		"ignore": []
+	},
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"qqappid": "1109711687",
+	"projectname": "%E6%A0%A1%E5%9B%ADN%E5%A4%9A-qq",
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"appid": "wx26ddabd68abed765",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": []
+		}
+	}
+}

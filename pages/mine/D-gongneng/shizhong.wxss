@@ -1,0 +1,105 @@
+/* pages/mine/D-gongneng/shizhong.wxss */page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tui-header-box {
+width: 100%;
+position: fixed;
+left: 0;
+top: -20rpx;
+z-index: 9998;
+}
+
+.time{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:350rpx;
+  height:350rpx;
+  position: absolute;
+  top:100rpx;
+  border: 6rpx solid rgb(253, 214, 37);
+  border-radius: 50%;
+  font-size: 60rpx;
+  font-weight: 800;
+  letter-spacing:8rpx;
+}
+/* 时间线 */
+.cx {
+  background-color:#808080;
+  width: 4rpx;
+  height: 18rpx;
+  margin-left: 20rpx;
+}
+.dx {
+  background-color:#808080;
+  width: 4rpx;
+  height: 12rpx;
+  margin-left: 20rpx;
+}
+.all{
+  width:700rpx;
+  height:80rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+}
+.tab-h {
+  height:80rpx;
+  width: 260rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 40rpx;
+  font-size: 22rpx;
+  white-space: nowrap;
+  position: absolute;
+  top: 320rpx;
+  left: 240rpx;
+  z-index: 99;
+  display: flex;
+  flex-direction: row;
+  color: 	#808080;
+}
+.tab-item { 
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.jh{
+  width: 20rpx;
+  display:flex;
+  flex-direction:column;
+}
+.hour{
+  margin-left:10rpx;
+}
+/* 计时目标 */
+.target{
+  color:#808080;
+  font-size:30rpx;
+  position: absolute;
+  top:530rpx ;
+}
+.action{
+ border-radius: 60rpx;
+ height: 70rpx;
+ width: 300rpx;
+ background-color:rgb(253, 214, 37);
+ color: black;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 30rpx;
+ font-weight: 600;
+ letter-spacing: 6rpx;
+}
+.stopaction{
+  display: flex;
+  width: 120rpx;
+  height: 120rpx;
+  border: 2rpx solid rgb(253, 214, 37);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}

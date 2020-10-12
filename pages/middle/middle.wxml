@@ -1,0 +1,95 @@
+ <!--顶部消息-->
+  <tui-tips id="tui-tips-ctx" ></tui-tips>
+
+<view class='panel panel-between ' style='padding:10rpx 0'>
+  <view class='panel-start item-center'>
+  <!-- 头像 -->
+  <image class="icon-120 header ma-l30" src="{{avatar}}"></image>
+  <!-- 名字 -->
+  <view class="fo-28  ma-l30">{{username}}</view>
+  </view>
+</view>
+
+
+  <!--顶部消息-->
+<!-- 输入动态文本内容 -->
+<view class="section1">
+ <textarea  hidden='{{controls}}' class="content" auto-focus="{{true}}"placeholder="亲爱的同学，选择一个话题更容易让大家关注到你哦..." placeholder-style="font-size:30rpx" bindinput="form_info"show-confirm-bar="{{false}}"></textarea>
+</view>
+
+<!-- 话题选择区域，跳页选择 -->
+<view class="section2">
+  <button class="button" bindtap='select'> 
+  <text class='wenzi'>{{secondData}}</text>
+  </button>
+</view>
+
+<!-- 图片/视频选择 -->
+<view class="section3">
+  <!-- 已有视频时不可选择图片 -->
+  <block wx:if="{{src==''}}">
+    <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files">
+                    <block wx:for="{{imgList}}" wx:for-item="image">
+                      <view class="weui-uploader__file">
+                        <image mode='aspectFill' class="weui-uploader__img" src="{{image}}" data-src="{{image}}" data-index="{{index}}" bindlongtap="DelImg" bindtap="previewImage"></image>
+                      </view>
+                    </block>
+                  </view>
+                  <!-- 当图片为一张时 -->
+        <view class="weui-uploader__input-box" wx:if='{{imgList.length<9}}'>
+         <view class="weui-uploader__input" bindtap="choose">
+         </view>
+       </view>
+     </view>
+
+  </block>
+  <!-- 已有图片时不可选择视频 -->
+  <block wx:if="{{src != ''}}">
+    <video src="{{src}}" bindlongtap='DelVideo' bindfullscreenchange='screenChange' class="video"></video>
+  </block>
+</view>
+
+<!-- 图片、视频添加按钮；匿名；发送 -->
+<view class="section4 ma-b">
+  <!-- 添加视频 -->
+  <!-- <view class='addVideo'bindtap="chooseVideo">
+     <image class="icon" src="/img/icon_video.png"></image>
+     <text class="text" >添加视频</text>
+  </view> -->
+
+  <!-- 添加图片 -->
+  <!-- <view class='addImage'bindtap="chooseImage" >
+     <image class="icon" src="/img/icon_image.png"></image>
+     <text class="text" >添加图片</text>
+  </view> -->
+
+  <!-- 匿名发布 -->
+  <view class="unknown ">
+    <checkbox bindtap="choose_anonymous" class= "unknown-text" >匿名</checkbox>
+  </view>
+
+
+  <!-- 发送：已选择话题直接跳转，未选择话题弹出框 -->
+  
+  <block wx:if='{{src == "" && imgList.length == 0 && formcontent == "" }}'>
+    <button class="sending" bindtap="nosend">
+    <text class="sending-text">发布</text>
+    </button>
+  </block>
+
+ <block wx:else>
+    <block wx:if="{{secondData != '#选择话题#'}}">
+      <button class="sending" bindtap="send" disabled="{{alreadysend}}">
+      <text class="sending-text">发布</text>
+      </button>
+    </block>
+
+    <block wx:if="{{secondData == '#选择话题#'}}">
+    <button class="sending" bindtap="tishi">
+    <text class="sending-text">发布</text>
+    </button>
+  </block>
+  
+ </block>
+</view>

@@ -1,0 +1,114 @@
+/* pages/logon/landing/landing.wxss */
+page{
+  background: #fff
+}
+.a01{
+padding:100rpx 20rpx 10rpx 66rpx; 
+width:177rpx;
+height:177rpx;
+}
+.a02{
+padding-top: 20rpx;  
+padding-left: 80rpx;  
+width:60rpx;
+height:60rpx;
+
+}
+.dir{
+    display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
+}
+.-dir{ 
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+.wenzi01{
+
+font-size:54rpx;
+font-family:MicrosoftYaHei;
+color:rgba(0,0,0,1);
+line-height:36px;
+padding: 100rpx 0rpx 0rpx 10rpx;
+}
+.wenzi02{
+
+
+font-size:45rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(51,51,51,1);
+
+padding: 20rpx 0rpx 0rpx 10rpx;
+}
+.wenzi03{
+
+font-size:36rpx;
+font-family:MicrosoftYaHei;
+color:rgba(0,0,0,1);
+
+}
+.wenzi04{
+
+font-size:28rpx;
+font-family:MicrosoftYaHei;
+color:rgba(255,0,0,1);
+
+margin-left: 90rpx;
+margin-bottom: 100rpx;
+
+}
+.wenzi05{
+
+font-size:36rpx;
+font-family:MicrosoftYaHei;
+color:	#A9A9A9
+
+}
+
+.jiange{
+  padding: 100rpx;
+}
+.form {
+	background-color: var(--white);
+	padding: 1rpx 80rpx 0rpx 30rpx;
+	display: flex;
+	align-items: center;
+	min-height: 100rpx;
+	
+}
+.btn{
+  position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+  width:190rpx;
+  height:60rpx;
+  background:rgba(254,225,38,1);
+ 
+}
+
+.jiange01{
+  padding: 30rpx;
+}
+.denglu{
+width:570rpx;
+height:110rpx;
+background:rgba(254,225,38,1);
+margin-left: 90rpx;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+
+}
+
+button::after{
+  border: none;
+
+}
+button{
+    border-radius: 0;
+}
+

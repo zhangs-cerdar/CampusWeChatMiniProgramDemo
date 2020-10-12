@@ -1,0 +1,257 @@
+page{
+  background: #fff
+}
+
+/* 帖子样式 */
+/* video布局 */
+video{
+
+width:100%;
+height:100%;
+align-items:center;
+}
+image{
+
+width:100%;
+height:100%;
+align-items:center;
+
+}
+/* 关注与取消关注 */
+.section1-concern{
+  position: absolute;
+  width: 110rpx;
+  height:54rpx;
+  background-color: #fee126;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22rpx;
+  color: white;
+  margin-left: 600rpx;
+  margin-top: 2rpx;
+}
+.section1-unconcern{
+  position: absolute;
+  width: 110rpx;
+  height:54rpx;
+  background-color: #CCCCCC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22rpx;
+  margin-left: 600rpx;
+  margin-top: 2rpx;
+  color:white;
+}
+
+
+.section4{padding: 20rpx 20rpx 0rpx 20rpx;}
+
+.section4-img{
+  border-radius: 50%
+}
+.section4-content{
+   word-break:break-all;
+   width: 710rpx;
+   display: -webkit-box ;
+   overflow: hidden;
+}
+/* section5-图片布局 */
+.section5-4{
+
+}
+/* 1张的情况 */
+.section5-img1{
+  /* width: 400rpx; */
+  height: 600rpx;
+  position:relative;
+  margin: 5rpx 0rpx 0rpx 5rpx;
+  
+}
+
+.section5-img4{
+  width: 300rpx;
+  height: 300rpx;
+  position:relative;
+  margin:  5rpx 0rpx 0rpx 5rpx;
+}
+.section5-img5{
+  width: 200rpx;
+  height: 200rpx;
+  position:relative;
+  margin:  5rpx 0rpx 0rpx 5rpx;
+}
+.grid {
+
+display: flex;
+flex-wrap: wrap;
+
+}
+/* 评论 */
+.comment-section4{
+  width: 710rpx;
+  padding-top:4rpx;
+  padding-bottom:16rpx;
+}
+.s4-evecomment{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 15rpx 0rpx
+}
+.s4-com_left{
+  width:70rpx;
+}
+.s4-com_left image{
+ width:70rpx;
+ height:70rpx;
+  border-radius:50%; 
+}
+.s4-username{
+  font-size: 26rpx;
+  color:#4169E1	;
+  height:36rpx;
+  margin-left: 12rpx;
+}
+
+.s4-replytime{
+  color: #666666;
+  font-size:20rpx;
+  margin-left: 10rpx;
+  margin-top: 6rpx;
+
+}
+.s4-reply_info{
+  display: flex;
+  flex-direction: row;
+}
+.s4-com_content{
+  font-size: 32rpx;
+  padding-top:7rpx;
+  /* padding-right:7rpx; */
+  margin-left: 12rpx;
+  word-break:break-all;
+}
+
+/* 底部评论 */
+/* 快拍  */
+.btn-fastphoto {
+    position: fixed;
+    left: 2%;
+    /* transform: translateX(-50%); */
+    bottom: 10rpx;
+    width: 96%;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    border-radius: 30rpx;
+    color: #fff;
+    font-size: 34rpx;
+    /* box-shadow: 0px 0px 10px #1397dc; */
+    background: #FFFFFF
+}
+.btn-fastphoto2 {
+    position: fixed;
+  /* transform: translateX(-50%); */
+    opacity:0.98;
+    width: 100%;
+    height: 100rpx;
+    bottom: 0rpx;
+    background: #FFFFFF
+}
+/* 底部互动 */
+.bottom-section5{
+  position:fixed;
+  background-color: white;
+  width: 100%;
+  height: 84rpx;
+  bottom:0rpx;
+}
+
+.s5-interaction{
+  height: 60rpx;
+  width: 172rpx;
+  display: flex;
+  flex-direction: row;
+  bottom: 10rpx;
+  position: fixed;
+  right: 12rpx;
+  justify-content: space-between;
+}
+.s5-input_model{
+  width:410rpx;
+  height:62rpx;
+  position: fixed;
+  left:116rpx;
+  bottom:18rpx;
+  border: 2rpx solid black;
+  font-size: 26rpx;
+  color: #969696;
+  display: flex;
+  align-items: center;
+}
+.s5-avatar{
+  width:70rpx;
+  height:70rpx;
+  position: fixed;
+  left:34rpx;
+  bottom:14rpx;
+}
+.group{
+  width:50rpx;
+  height:68rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.group1{
+  width:60rpx;
+  height:68rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.group2{
+  width:50rpx;
+  height:68rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon{
+  width:50rpx;
+  height:44rpx;
+  position: relative;
+}
+.interaction_state{
+  font-size:20rpx;
+  color: #cccccc;
+}
+.tab-h {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  height: 80rpx;
+  width: 100%;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  margin-top: 10rpx;
+}
+
+.active {
+  border-bottom: 3rpx #ec304c solid;
+  color: black;
+  position: relative;
+  font-size: 32rpx;
+  padding-bottom: 10rpx;
+}
+.unactive{
+   color: #A9A9A9	;
+  position: relative;
+  font-size: 32rpx;
+   padding-bottom: 10rpx;
+}
+.scroll-h {
+  height: 100%;
+}

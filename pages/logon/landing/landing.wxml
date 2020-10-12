@@ -1,0 +1,44 @@
+<!--pages/logon/landing/landing.wxml-->
+<view class='-dir'>
+  <image class='a01' src='/img/icon_logo.png'></image>
+  <view class='dir'>
+  <text class='wenzi01'> 注册登录</text>
+  <text class='wenzi02'>校园生活应有尽有</text>
+  </view>
+</view>
+<view class='jiange'></view>
+<!-- 学号 -->
+<view class='panel panel-between item-center ma-l90  ma-r90 border-b'>
+    <view class='panel-start item-center'>
+      <image src='/img/account.png' class='icon-60 ma-r30'></image>
+      <input auto-focus="true" class='fo-32' type='number' maxlength='11' data-name='' bindinput='ddinput' placeholder='请输入学号'></input>
+    
+    </view>
+  
+</view>
+<!-- 教务系统密码 -->
+<view class='panel panel-between item-center ma-l90  ma-r90 border-b'>
+    <view class='panel-start item-center'>
+      <image src='/img/password.png' class='icon-60 ma-r30'></image>
+      <input auto-focus="true" class='fo-32' type='number' maxlength='11' data-name='phone' bindinput='ddinput' placeholder='请输入学号'></input>
+    
+    </view>
+</view>
+
+ <view class='jiange01'></view>
+  <!-- 登录按钮 -->
+  
+ <button class="denglu" bindgetuserinfo="authorLogin">
+ 
+ <text  class='wenzi03'> 登录 </text>
+ </button>
+
+<!-- 提示字 -->
+<view class='jiange'></view>
+  
+<text class='wenzi04'>温馨提示：本软件只服务于学生群体</text>
+  
+
+
+
+ 

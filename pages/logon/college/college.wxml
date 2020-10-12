@@ -1,0 +1,24 @@
+<!--pages/logon/college/college.wxml-->
+<!-- 校徽 -->
+<view class='-dir'>
+<image class='a01' src='/img/xiaohui.png'></image>
+<text class='wenzi01'>常熟理工学院</text>
+</view>
+<view class='jiange01'></view>
+
+
+<view class="ma-l30 ma-r30" wx:for="{{academy}}"  wx:key=''>
+
+   <view class=' border-b' style='padding:30rpx 0'>
+   <view class='fo-32 ' bindtap="goToFirst" data-id="{{item.id}}" data-content="{{item.content}}">{{item.content}}</view>
+</view>
+   
+</view>
+
+<!-- 到底了 -->
+<view class="panel-center item-center" wx:if="{{circleList.length != 0}}" style='padding:30rpx;padding-top:30rpx '>
+  <view class='fg1'></view>
+  <view class='fg2'>我是有底线的</view>
+  <view class='fg1'></view>
+</view>
+ 

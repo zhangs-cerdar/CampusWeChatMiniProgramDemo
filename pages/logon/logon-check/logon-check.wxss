@@ -1,0 +1,101 @@
+/* pages/logon/logon-check/logon-check.wxss */
+.dir{
+    display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: column;
+}
+.-dir{ 
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  justify-content:space-between;
+  height: 100rpx;
+}
+
+.t01{
+display: inline-flex;
+align-items: center;
+justify-content: center;
+
+width:100%;
+height:80rpx;
+background:rgba(254,225,38,0.2);
+}
+.wenzi01{
+
+
+font-size:36rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(159,99,0,1);
+
+}
+.wenzi02{
+line-height:40rpx;
+margin-top: 30rpx; 
+margin-left: 60rpx;  
+font-size:32rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(0,0,0,1);
+
+}
+.wenzi03{
+line-height:40rpx;
+font-size:32rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(102,102,102,1);
+margin-top: 30rpx; 
+margin-right: 120rpx;
+}
+.wenzi04{
+
+font-size:36rpx;
+font-family:MicrosoftYaHei;
+color:rgba(0,0,0,1);
+
+}
+.wenzi05{
+
+font-size:36rpx;
+font-family:MicrosoftYaHei;
+color:	#A9A9A9
+
+}
+
+.a01{
+margin-top: 35rpx;  
+margin-left: 680rpx;
+position: absolute;  
+width:18rpx;
+height:32rpx;
+
+}
+.jiange01{
+  padding: 60rpx;
+}
+.xian{
+  background: #D8D8D8;
+  width:630rpx;
+  height:1rpx;
+  margin-left: 60rpx;
+  /* margin-top: 25rpx;
+  margin-bottom: 25rpx; */
+}
+.denglu{
+width:550rpx;
+height:110rpx;
+background:rgba(254,225,38,1);
+margin-left: 100rpx;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+}
+button::after{
+  border: none;
+
+}
+button{
+    border-radius: 0;
+}

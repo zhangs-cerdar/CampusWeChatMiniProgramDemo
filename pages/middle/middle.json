@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "navigationBarTitleText": "动态发布",
+  "usingComponents": {
+    "tui-tips": "../../components/tips/tips"
+  }
+}

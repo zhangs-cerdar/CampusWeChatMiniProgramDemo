@@ -1,0 +1,116 @@
+<!-- 背景图 -->
+<view class='set-background'>
+ <image class='background-image' src='/img/background.png' ></image>
+    
+  <view class='background-content'>
+       <!--头像  -->
+        <view class="set-background-avatar" background-size="cover">
+      
+          <!-- <open-data  class="set-name" type="userNickName" lang="zh_CN"></open-data>   -->
+         <view class="set-name">{{username}}</view>
+       
+         <!-- <open-data class="post-specific-image" type="userAvatarUrl" ></open-data> -->
+         <image class="post-specific-image" src='{{avatar}}' mode='aspectFill'></image>
+         <!-- 加判定男女 -->
+          
+        <image  wx:if='{{gender==0}}'  class="set-img2" src="/img/famale.png"> </image>
+        <image  wx:if='{{gender==1}}'  class="set-img2" src="/img/male.png"> </image>
+         <!-- <view   class="set-xuehao">学号：160717130</view> -->
+        </view>
+  
+    </view>
+
+</view>
+
+<!-- section1 -->
+<view class='section1'>
+<!-- 发帖 -->
+ <view class='section1-1' data-username="{{findUser.username}}" bindtap='tiaozhuan1'>
+   <view class='section1-wenzi'>发帖</view>
+    <view wx:if="{{myListCount!=null}}" class='section1-wenzi'>{{myListCount}}</view>
+    <view wx:if="{{myListCount==null}}" class='section1-wenzi'>0</view>
+  </view>
+ <view class="section1-xian"></view>
+<!-- 关注 -->
+  <view class='section1-1' bindtap='tiaozhuan2'>
+    <view class='section1-wenzi'>关注</view>
+    <view wx:if="{{myFollowCount!=null}}" class='section1-wenzi'>{{myFollowCount}}</view>
+    <view wx:if="{{myFollowCount==null}}" class='section1-wenzi'>0</view>
+
+  </view>
+<view class="section1-xian"></view>
+<!-- 粉丝 -->
+  <view class='section1-1' bindtap='tiaozhuan3'>
+    <view  class='section1-wenzi'>粉丝</view>
+    <view wx:if="{{myFansCount!=null}}" class='section1-wenzi'>{{myFansCount}}</view>
+    <view wx:if="{{myFansCount==null}}" class='section1-wenzi'>0</view>
+  </view>
+</view>
+
+<!-- 多种功能 -->
+
+ <scroll-view class="section2" scroll-x="true">
+          <view class="uploadWrap" scroll-x="true" >
+            <view class="upload_Item" wx:for="{{imgUrls}}" wx:key="id">
+            
+              <image class="upload_Item_img" src="{{item.imgurl}}"data-id="{{item.id}}"data-name="{{item.name}}" bindtap="gongneng"></image>
+              
+               <view class="upload_mask" >{{item.name}}</view> 
+            </view>
+          </view>
+ </scroll-view>
+<view class="section2-xian"></view>
+
+
+<!-- section3 -->
+<!-- 个人信息 -->
+<view class="section3">
+<view class='panel panel-between item-center ma-t20  border-b' bindtap='tiaozhuan7'>
+    <view class='panel-start item-center'>
+      <image src='/img/geren.png' class='icon-img ma-r20'></image>
+      <view class='fo-wz'>个人信息</view>
+    </view>
+    <image src='/img/right.png' class='icon-25'></image>
+  </view>
+<!-- 实名认证 -->
+<view class='panel panel-between item-center border-b' bindtap='tiaozhuan8'>
+    <view class='panel-start item-center'>
+      <image src='/img/shiming.png' class='icon-img ma-r20'></image>
+      <view class='fo-wz'>实名认证</view>
+    </view>
+    <image src='/img/right.png' class='icon-25'></image>
+  </view>
+
+<!-- 我的收藏 -->
+<view class='panel panel-between item-center border-b' bindtap='tiaozhuan9'>
+    <view class='panel-start item-center'>
+      <image src='/img/shoucang.png' class='icon-img ma-r20'></image>
+      <view class='fo-wz'>我的收藏</view>
+    </view>
+    <image src='/img/right.png' class='icon-25'></image>
+  </view>
+
+
+<!-- 微信客服 -->
+<button class='filter-btn' open-type='feedback'>
+    <view class='panel panel-between item-center border-b'>
+      <view class='panel-start item-center'>
+      <image src='/img/d2.png' class='icon-img ma-r20'></image>
+        <view class='fo-wz'>我的反馈</view>
+      </view>
+      <image src='/img/right.png' class='icon-25'></image>
+    </view>
+</button>
+
+<!-- 关于我们 -->
+<view class='panel panel-between item-center' bindtap='tiaozhuan10'>
+    <view class='panel-start item-center'>
+      <image src='/img/d6.png' class='icon-img ma-r20'></image>
+      <view class='fo-wz'>关于我们</view>
+    </view>
+    <image src='/img/right.png' class='icon-25'></image>
+</view>
+</view>
+  
+
+<view class="kongbai"></view>

@@ -1,0 +1,109 @@
+ <scroll-view scroll-y="true" style="height:{{winHeight}}rpx" lower-threshold="100" bindscrolltolower="loadMore">
+     <view wx:if="{{currentTab == index}}"> 
+<!-- 帖子样式 -->
+               <block wx:for="{{circleList}}" wx:for-item="temcircle"  wx:for-index="index1" wx:key=''>
+    <block wx:for="{{temcircle}}" wx:for-index="index2"  wx:key=''>
+                  <view class='border-bb'bindtap="gotodetail">
+
+<!-- 头像 -->
+<view class=" panel panel-between  item-center ma-l20 ma-r20">
+ <view class='panel-start item-center'>
+ <image class="ra-y icon-70 " src='{{item.userAvatar}}'  mode='aspectFill'data-index1="{{index1}}"data-index2="{{index2}}"catchtap='ToPersonaldetail'></image>
+ <!-- 名字 -->
+ <view class="ma-l20"><view class="fo-30 ">{{item.userName}}</view>
+ <!-- 时间 -->
+  <view class="fo-20 fo-g ">{{item.createdDate}}</view>
+ </view>
+ </view>
+ <!-- 举报按钮 -->
+</view>
+<!-- 帖子内容 -->
+ <view wx:if='{{item.content}}' class="fo-30 content ma-l20">{{item.content}}</view>
+<!-- 图片 -->
+
+ <!-- 图片布局 -->
+ <block wx:if ='{{item.attachments[0].type== "image"}}'>
+  <view class='ma-l20'>
+ 
+  <!-- section5-图片 -1 -->
+  <view class="grid"  wx:if="{{ item.attachments.length ==1 }}"  >
+    <block  class="" wx:for="{{item.attachments}}" wx:key="" wx:for-index="aa" >
+
+        <!-- 当宽高比<0.25时 -->
+  <view style="position:relative;width:710rpx;height:177.5rpx;"  wx:if="{{item.originalScale <=0.25 }}"  >
+    <image lazy-load  catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}"  mode="aspectFill"  src='{{item.url}}'></image>
+  </view>
+                       
+      <!-- 当宽高比<1时 -->
+  <view style="position:relative;width:710rpx;height:{{710*(item.originalScale)}}rpx;"  wx:if="{{item.originalScale >0.25 && item.originalScale <=1 }}"  >
+    <image lazy-load  catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}"     src='{{item.url}}'></image>
+  </view>
+
+   <!-- 当宽高比<4时 -->
+    <view style="position:relative;width:{{800/(item.originalScale)}}rpx;height:800rpx;"  wx:if="{{ item.originalScale >1&& item.originalScale <=4 }}"  >
+    <image lazy-load  catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}"    src='{{item.url}}'></image>
+   </view>
+    <!-- 当宽高比>4时 -->
+    <view style="position:relative;width:200rpx;height:800rpx;"  wx:if="{{ item.originalScale >4}}">
+    <image lazy-load  catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}" mode="aspectFill" src='{{item.url}}'></image>
+   </view>
+
+    
+   </block>
+   
+  </view>
+
+
+  <!-- section5-图片 -3 -->
+  <view class="grid"  wx:if="{{ item.attachments.length ==3}}"  >
+    <block  class="" wx:for="{{item.attachments}}" wx:key=""  wx:for-index="aa"  >
+    <image lazy-load="true"  catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}"  class="section5-img5" src='{{item.url}}' mode='aspectFill'></image>
+   </block>  
+  </view> 
+ <!-- section5-图片 -2和4 -->
+  <view class="grid"  wx:if="{{ item.attachments.length ==4 || item.attachments.length ==2 }}"  >
+    <block  class="" wx:for="{{item.attachments}}" wx:key=""  wx:for-index="aa" >
+    <image lazy-load="true" catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}" class="section5-img4" src='{{item.url}}' mode='aspectFill'></image>
+   </block>  
+  </view> 
+   <!-- section5-图片 -5-9 -->
+  <view class="grid"  wx:if="{{ item.attachments.length <=9 && item.attachments.length >=5 }}"  >
+    <block  class="" wx:for="{{item.attachments}}" wx:key=""  wx:for-index="aa" >
+    <image lazy-load="true" catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}"   class="section5-img5" src='{{item.url}}' mode='aspectFill'></image>
+   </block>  
+  </view> 
+  </view> 
+  </block>
+ 
+<!-- 点赞，评论，收藏 -->
+<view class="panel panel-between item-center  ma-l20 ma-r20" >
+   <!-- 点赞 -->
+    <view class="panel-start ">
+     <view class="">
+     <image wx:if="{{item.liked}}" class="icon-40 " src="/img/like.png" catchtap="unPraise" data-index1="{{index1}}"  data-index2="{{index2}}"  bindtouchstart="touchStart" bindtouchend="touchEnd"></image>
+     <image wx:else class="icon-40" src="/img/unlike.png"  catchtap="toPraise" data-index1="{{index1}}"  data-index2="{{index2}}" bindtouchstart="touchStart" bindtouchend="touchEnd" />
+     </view>
+     <text class=" ma-l10 fo-30 fo-whith">{{item.likeCount}}</text>
+   </view>
+
+     <!-- 评论 -->
+
+   <view class="panel-start ">
+   <image data-index1="{{index1}}"data-index2="{{index2}}"   class="icon-40" src="/img/pinglun.png"></image>   
+   <text class="fo-30 ma-l10 fo-whith ">{{item.commentCount}}</text>
+   </view>
+  <!-- 收藏 -->
+     <view class="panel-start" >
+      <view class="">
+       <image class="icon-40 " wx:if="{{item.collected}}" src="/img/collection.png" catchtap="unCollect" data-index1="{{index1}}"  data-index2="{{index2}}"></image>
+         <image wx:else class="icon-40 " src="/img/uncollection.png"  catchtap="toCollect" data-index1="{{index1}}"  data-index2="{{index2}}"></image>
+           </view>
+          <text class="fo-30 ma-l10 " wx:if="{{item.collected}}">收藏</text>
+          <text class="fo-30 ma-l10 " wx:else>收藏</text>
+     </view>
+</view>
+</view>
+</block>
+</block>
+ 
+  </view> </scroll-view>

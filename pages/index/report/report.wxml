@@ -1,0 +1,14 @@
+<view class="title">请选择举报该动态的原因：</view>
+<view class="ma-t20">
+  <view wx:for="{{reportList}}" >
+   <view class='panel panel-between item-center border-b pa-l40 pa-r40'  bindtap='choose' data-index="{{index}}">
+    <view class='panel-start item-center'>
+      <view class='fo-wz'>{{item.content}}</view>
+    </view>
+    <image src='/img/chooseReportType.png' class='icon-40' wx:if="{{idx == item.rid}}" ></image>
+  </view>
+  </view>
+</view>
+<view style="width:100%;display:flex;flex-direction:column;align-items:center;">
+  <view bindtap="showmodal" class="submit">确定</view>
+</view>

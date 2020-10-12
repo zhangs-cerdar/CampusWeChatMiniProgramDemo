@@ -1,0 +1,59 @@
+/* pages/logon/avatar/avatar.wxss */
+
+
+
+
+
+
+
+
+
+
+
+/* 头像 */
+.header {
+  width: 190rpx;
+  height: 190rpx;
+  border: 4rpx solid #fff;
+  margin: 0rpx auto 0;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 2rpx 0rpx 5rpx rgba(50, 50, 50, 0.3);
+  margin-top: 150rpx;
+}
+
+.jiange01{
+  padding: 120rpx;
+}
+
+.form{
+margin-top: 60rpx;
+ width: 100%;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 32rpx;
+ 
+}
+.xian{
+  background: #979797;
+  width:630rpx;
+  height:0.5rpx;
+  margin-left: 60rpx;
+  margin-top: 25rpx;
+}
+.denglu{
+width:550rpx;
+height:110rpx;
+background:rgba(254,225,38,1);
+margin-left: 100rpx;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+}
+.wenzi01{
+font-size:32rpx;
+font-family:PingFangSC-Regular;
+font-weight:400;
+color:rgba(0,0,0,1);
+}

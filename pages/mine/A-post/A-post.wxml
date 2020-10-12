@@ -1,0 +1,202 @@
+<!--pages/mine/A-post/A-post.wxml-->
+<!-- 背景图 -->
+<scroll-view scroll-y lower-threshold="100" style="height: {{winHeight}}rpx;" bindscrolltolower="loadMoreData">
+
+<view class='panel panel-between item-center ma-l20 ma-r20'>
+ <!--头像  -->
+ <view class="panel-start">
+ <image class="post-specific-image " src='{{avatar}}'  mode='aspectFill'></image>
+ <!-- 性别 -->
+ <image  wx:if='{{gender==2}}'  class="icon-40 section1-img2 " src="/img/famale.png"> </image>
+ <image  wx:if='{{gender==1}}'  class="icon-40 section1-img2" src="/img/male.png" > </image>
+ <!-- 关注数-粉丝数 -->
+<view class='section1  ma-l30'>
+<!-- 发帖 -->
+ <view class='section1-1 ' >
+   
+    <view wx:if="{{myListCount!=null}}" class='fo-32 bold'>{{myListCount}}</view>
+    <view wx:if="{{myListCount==null}}" class='fo-32 bold'>0</view>
+    <view class='fo-28 ma-t5'>发帖</view>
+  </view>
+ 
+<!-- 关注 -->
+  <view class='section1-1' >
+   
+    <view wx:if="{{myFollowCount!=null}}" class='fo-32 bold'>{{myFollowCount}}</view>
+    <view wx:if="{{myFollowCount==null}}" class='fo-32 bold'>0</view>
+     <view class='fo-28 ma-t5'>关注</view>
+  </view>
+
+<!-- 粉丝 -->
+  <view class='section1-1'>
+     <view wx:if="{{myFansCount!=null}}" class='fo-32 bold'>{{myFansCount}}</view>
+     <view wx:if="{{myFansCount==null}}" class='fo-32 bold'>0</view>
+     <view  class='fo-28 ma-t5'>粉丝</view>
+  </view>
+</view>
+
+
+
+
+</view>
+ 
+        <!-- 编辑按钮 -->
+
+       <view class="section1-gz2"  bindtap="Tomine"  >
+         <view class="section1-gz-wz2 bold">编辑个人资料</view>
+         </view>
+       
+        <!-- <block wx:if="{{getUser.followed}}" >
+         <view class="section1-gz" bindtap="follow" data-followed="{{getUser.followed}}" >
+         <view class="section1-gz-wz">已关注</view>
+         </view>
+        </block> -->
+        <!-- 需关注 -->
+        <!-- <block wx:if="{{!getUser.followed}}" >
+         <view class="section1-gz2"  bindtap="follow" data-followed="{{getUser.followed}}" >
+         <view class="section1-gz-wz2 bold">关注</view>
+         </view>
+        </block> -->
+    
+    
+</view>
+
+<!-- section3 -->
+<view wx:if='{{getUser2.academy!=null}}' class="section3-wz">{{getUser2.academy}} </view>
+<view  wx:if='{{getUser2.major!=null}}' class="section3-wz2 pa-b30 border-b">{{getUser2.major}}</view>
+<view  wx:if='{{getUser2.major==null}}' class="section3-wz2 pa-b30 border-b"></view>
+
+ <view class="section3-1">
+ <text class="section3-wz3">我的动态</text>
+ <view class="section3-juxing"></view> 
+</view>
+
+<block wx:for="{{circleList}}" wx:for-item="temcircle"  wx:for-index="index1" wx:key=''>
+    <block wx:for="{{temcircle}}" wx:for-index="index2"  wx:key=''>
+                  <view class='border-bb'>
+<view  class="section4 border-bb bg-w"  data-index1="{{index1}}" data-index2="{{index2}}"   bindtap="gotodetail" hidden="{{item.deleted}}">
+
+<!-- 头像 -->
+<view class=" panel panel-between  item-center ">
+<view class='panel-start item-center'>
+ <image class="section4-img icon-70 " src='{{avatar}}'  mode='aspectFill'></image>
+<!-- 名字 -->
+<view class="ma-l20"><view class="fo-30 ">{{getUser.username}}</view>
+<!-- 时间 -->
+  <view class="section4-time fo-20 fo-g ">{{item.createdDate}}</view>
+ </view>
+</view>
+ <!-- 删除按钮 -->
+<image class=" icon-30 pa-10" catchtap="delete" data-index1="{{index1}}" 
+data-index2="{{index2}}" src='/img/shanchu.png'  mode='aspectFill'></image>
+</view>
+<!-- 帖子内容 -->
+<view class="fo-30 section4-content bg-w">{{item.content}}</view>
+<!-- 图片和视频的布局 -->
+
+ <!-- 图片布局 -->
+ <block wx:if ='{{item.attachments[0].type== "image"}}'>
+  <view class='ma-l20'>
+ 
+  <!-- section5-图片 -1 -->
+  <view class="grid"  wx:if="{{ item.attachments.length ==1 }}"  >
+    <block  class="" wx:for="{{item.attachments}}" wx:key="" wx:for-index="aa" >
+
+        <!-- 当宽高比<0.25时 -->
+  <view style="position:relative;width:710rpx;height:177.5rpx;"  wx:if="{{item.originalScale <=0.25 }}"  >
+    <image lazy-load  catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}"  mode="aspectFill"  src='{{item.url}}'></image>
+  </view>
+                       
+      <!-- 当宽高比<1时 -->
+  <view style="position:relative;width:710rpx;height:{{710*(item.originalScale)}}rpx;"  wx:if="{{item.originalScale >0.25 && item.originalScale <=1 }}"  >
+    <image lazy-load  catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}"     src='{{item.url}}'></image>
+  </view>
+
+   <!-- 当宽高比<4时 -->
+    <view style="position:relative;width:{{750/(item.originalScale)}}rpx;height:750rpx;"  wx:if="{{ item.originalScale >1&& item.originalScale <=4 }}"  >
+    <image lazy-load  catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}"    src='{{item.url}}'></image>
+   </view>
+    <!-- 当宽高比>4时 -->
+    <view style="position:relative;width:200rpx;height:800rpx;"  wx:if="{{ item.originalScale >4}}">
+    <image lazy-load  catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}" mode="aspectFill" src='{{item.url}}'></image>
+   </view> 
+   </block>
+  </view>
+
+  <!-- section5-图片 -3 -->
+  <view class="grid"  wx:if="{{ item.attachments.length ==3}}"  >
+    <block  class="" wx:for="{{item.attachments}}" wx:key=""  wx:for-index="aa"  >
+    <image lazy-load="true"  catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}"  class="section5-img5" src='{{item.url}}' mode='aspectFill'></image>
+   </block>  
+  </view> 
+ <!-- section5-图片 -2和4 -->
+  <view class="grid"  wx:if="{{ item.attachments.length ==4 || item.attachments.length ==2 }}"  >
+    <block  class="" wx:for="{{item.attachments}}" wx:key=""  wx:for-index="aa" >
+    <image lazy-load="true" catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}" class="section5-img4" src='{{item.url}}' mode='aspectFill'></image>
+   </block>  
+  </view> 
+   <!-- section5-图片 -5-9 -->
+  <view class="grid"  wx:if="{{ item.attachments.length <=9 && item.attachments.length >=5 }}"  >
+    <block  class="" wx:for="{{item.attachments}}" wx:key=""  wx:for-index="aa" >
+    <image lazy-load="true" catchtap="view" data-url="{{item.url}}"data-index1="{{index1}}"data-index2="{{index2}}"   class="section5-img5" src='{{item.url}}' mode='aspectFill'></image>
+   </block>  
+  </view> 
+  </view> 
+  </block>   
+  <!-- video -->
+  
+<block wx:if ='{{item.attachments[0].type== "video"}}'>
+    
+   <view style="position:relative;width:710rpx;height:800rpx;" wx:if='{{(item.attachments[0].originalScale)<1}}' >
+     <video show-center-play-btn="{{true}}" src="{{item.attachments[0].url}}" ></video>
+   </view>
+ 
+    <view style="position:relative;width:710rpx;height:{{710/(item.attachments[0].originalScale)}}rpx;" wx:if='{{(item.attachments[0].originalScale)>=1}}' >
+     <video show-center-play-btn="{{true}}" src="{{item.attachments[0].url}}" ></video>
+   </view>
+
+     
+</block> 
+
+
+<view class=" panel panel-between item-center ma-l20 ma-r20" >
+   <!-- 点赞 -->
+    <view class="item-center">
+     <image wx:if="{{item.liked}}"  class="icon-40 pa-10" src="/img/like.png" catchtap="unPraise" data-index1="{{index1}}"  data-index2="{{index2}}"bindtouchstart="touchStart" bindtouchend="touchEnd" ></image>
+     <image wx:else class="icon-40 pa-10" src="/img/unlike.png" pa-r10 pa-l10 catchtap="toPraise" data-index1="{{index1}}"  data-index2="{{index2}}"bindtouchstart="touchStart" bindtouchend="touchEnd" />
+     <text class="fo-30 fo-whith" catchtap="null">{{item.likeCount}}</text>
+   </view>
+     <!-- 评论 -->
+   <view class="item-center">
+   <image class="icon-40 pa-10" src="/img/pinglun.png"></image>   
+   <text class="fo-30  fo-whith">{{item.commentCount}}</text>
+   </view>
+  <!-- 收藏 -->
+     <view class="item-center" wx:if="{{item.collected}}" catchtap="unCollect" data-index1="{{index1}}"  data-index2="{{index2}}">
+      <image  class="icon-40 pa-10" src="/img/collection.png"  ></image>
+      <text class="fo-30">收藏</text>
+   </view>
+    <view class="item-center"wx:else catchtap="toCollect" data-index1="{{index1}}"  data-index2="{{index2}}">
+      <image  class="icon-40 pa-10" src="/img/uncollection.png"  ></image>
+      <text class="fo-30">收藏</text>
+   </view>
+</view>
+  <!-- 评论区 显示前5条评论 -->
+   <!-- <view wx:if='{{item.comments.length!=0}}' class="pinglun ma-b30" >
+    <view  class="" wx:for="{{item.comments}}" wx:key="" >
+    <!-- 限制显示评论条数 -->
+    <!-- <view wx:if="{{index<5}}" >
+    <view wx:if="{{item.replyUserName==null}}"><text class="fo-30" style="color:#2d8cf0">{{item.userName}}</text>
+    <text class="fo-30">:</text>
+    <text class="fo-30 ma-l10 ma-r10" >{{item.content}}</text></view>
+    <view wx:if="{{item.replyUserName!=null}}"><text class="fo-30" style="color:#2d8cf0">{{item.userName}}</text>
+    <text class="fo-30 ma-l10 ma-r10">回复</text><text class="fo-30" style="color:#2d8cf0">{{item.replyUserName}}:</text>
+    <text class="fo-30 ma-l10 ma-r10" >{{item.content}}</text>
+    </view>
+    </view>
+   </view>
+  </view> -->
+</view>
+</view></block></block>
+
+</scroll-view>

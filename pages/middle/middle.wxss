@@ -1,0 +1,207 @@
+/* pages/middle/middle.wxss */
+page{
+  background: #fff
+}
+.header {
+  /* width: 190rpx;
+  height: 190rpx; */
+  /* border: 4rpx solid #fff; */
+  /* margin: 0rpx auto 0; */
+  border-radius: 50%;
+  overflow: hidden;
+  /* box-shadow: 2rpx 0rpx 5rpx rgba(50, 50, 50, 0.3);
+  margin-top: 300rpx; */
+}
+.section1{
+  width: 100%;
+  height: 158rpx;
+}
+.content{
+  width: 79.4%;
+  margin-left: 32rpx;
+  margin-top: 26rpx;
+  height: 150rpx;
+  word-wrap:break-word;
+}
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+width: 0;
+height: 0;
+color: transparent;
+}
+
+.section2{
+  width: 100%;
+  height: 60rpx;
+  margin-top: 68rpx;
+
+}
+.button{
+background-color: #FEE126;
+  margin-left: 28rpx;
+  width: 246rpx;
+  height :60rpx;
+ border-radius: 30rpx;
+  font-size: 24rpx;
+  display: flex;
+border:1rpx solid rgba(0,0,0,1);
+ flex-direction: row;
+ text-justify: center;
+ align-items: center;
+
+}
+.wenzi{
+width:104px;
+height:20px;
+
+
+font-weight:500;
+color:rgba(0,0,0,1);
+line-height:20px;
+}
+.section3{
+  width:100%;
+ 
+  margin-top: 22rpx;
+  margin-left: 20rpx;
+}
+.section3-1{
+  width:100%;
+  height: 180rpx;
+  display: flex;
+  margin-top: 22rpx;
+  margin-left: 10rpx;
+}
+.section3-2{
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 378rpx;
+  margin-top: 22rpx;
+  margin-left: 10rpx;
+}
+.section3-3{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 576rpx;
+  margin-top: 22rpx;
+  margin-left: 10rpx;
+}
+.Image{
+  width: 180rpx;
+  height: 180rpx;
+  margin-left: 18rpx;
+  position: relative;
+}
+.Image3{
+  width: 180rpx;
+  height: 180rpx;
+  margin-left: 18rpx;
+  position: relative;
+  margin-top:9rpx;
+}
+
+.Imagecontent1{
+  width: 180rpx;
+  height: 180rpx;
+  position:relative;
+}
+
+.imgDelete{
+height: 32rpx;
+width: 34rpx;
+position: absolute;
+right: -4rpx;
+top: -4.17rpx;
+padding: 0rpx 0rpx 25rpx 25rpx;
+}
+
+.section4{
+  /* width: 720rpx;
+  height: 54rpx; */
+  /* margin-top: 50rpx; */
+  align-items: center;
+  display: flex;
+  flex-direction:row; 
+  border-top: solid 30rpx #f7f7f9
+}
+ma-b{
+
+}
+.addVideo{
+  width: 152rpx;
+  height:44rpx;
+  margin-left: 44rpx;
+  background-color: #FEE126;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+    align-items: center;
+}
+.icon{
+  width: 40rpx;
+  height:40rpx;
+}
+.text{
+  font-size: 22rpx;
+}
+.addImage{
+  width: 152rpx;
+  height:44rpx;
+  margin-left: 30rpx;
+  background-color: #FEE126;
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+   align-items: center;
+}
+
+.unknown{
+  width:200rpx;
+  height:44rpx;
+  /* margin-left: 32rpx; */
+    /* 居中法宝 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unknown-text{
+  font-size: 32rpx;
+}
+.sending{
+  /* width: 114rpx; */
+  height:54rpx;
+  background-color: #1B9AF4;
+  display: flex;
+  /* flex-direction:row; */
+  justify-content: center;
+  align-items: center;
+}
+.nosending{
+  /* width: 114rpx; */
+  height:54rpx;
+  background-color: rgb(174, 214, 243);
+  display: flex;
+  /* flex-direction:row; */
+  justify-content: center;
+  align-items: center;
+}
+.sending-text{
+  font-size: 22rpx;
+  color: white;
+}
+.video{
+   width: 690rpx;
+   margin-left:20rpx ;
+
+}
+button::after {
+  border: none;
+}
+button {
+  background-color: #fff;
+   border-radius:0;
+}

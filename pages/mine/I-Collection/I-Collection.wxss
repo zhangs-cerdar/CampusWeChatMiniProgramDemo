@@ -1,0 +1,76 @@
+page{
+  background: #fff
+}
+/* video布局 */
+video{
+
+width:100%;
+height:100%;
+align-items:center;
+}
+image{
+
+width:100%;
+height:100%;
+align-items:center;
+
+}
+.tab-h {
+  height: 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 80rpx;
+  /* background: #f7f7f7; */
+  font-size: 32rpx;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+/* 帖子样式section4 */
+.section4{padding: 20rpx 20rpx 0rpx 20rpx;}
+.section4-time{
+
+}
+.section4-img{
+  border-radius: 50%
+}
+.section4-content{
+   word-break:break-all;
+   width: 710rpx;
+   display: -webkit-box ;
+   overflow: hidden;
+
+}
+/* section5-图片布局 */
+.section5-4{
+
+}
+/* 1张的情况 */
+.section5-img1{
+  /* width: 400rpx; */
+  height: 600rpx;
+  position:relative;
+  margin: 5rpx 0rpx 0rpx 5rpx;
+  
+}
+
+.section5-img4{
+  width: 300rpx;
+  height: 300rpx;
+  position:relative;
+  margin:  5rpx 0rpx 0rpx 5rpx;
+}
+.section5-img5{
+  width: 200rpx;
+  height: 200rpx;
+  position:relative;
+  margin:  5rpx 0rpx 0rpx 5rpx;
+}
+.grid {
+display: flex;
+flex-wrap: wrap;
+}

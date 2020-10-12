@@ -1,0 +1,50 @@
+
+<view class='time'>
+    <text bindtap="chooseMin">{{min}}</text>
+     <text>:</text>
+    <text bindtap="chooseSecond">{{second}}</text>
+</view>
+<!-- 时间线 -->
+<scroll-view scroll-x="true" class="tab-h" hidden="{{hidetimeline}}">
+ <view style="width:40rpx;display: inline-flex"></view>
+   <view wx:for="{{12}}" wx:key=''class="tab-item"  >  
+        <view class="jh" data-index="{{index}}" bindtap="cx">
+         <view class="cx" ></view>
+         <view class="hour">{{index*5}}</view>
+        </view>
+         <view wx:for="{{4}}"class="tab-item"  wx:key=''  wx:for-index="index2"data-index="{{index}}"  data-index2="{{index2}}" bindtap="dx">
+           <view class="dx" ></view>
+         </view>
+    </view>
+    <view class="tab-item" bindtap="sixty">
+      <view class="jh">
+         <view class="cx"></view>
+         <view class="hour" >60</view>
+      </view>
+    </view>
+    <view style="width:60rpx;display: inline-flex"></view>
+</scroll-view>
+  
+
+  <!-- <目标设置> -->
+<view class="target" bindtap="target">{{target}}</view>
+
+<view style="position:absolute;top:640rpx;">
+  <view class="action" catchtap="changeFlag"  hidden="{{startHide}}">{{start_flag?'暂停':'开始'}}</view>
+  <view style="display:flex;flex-direction:row;overflow:hidden"  >
+    <view class='stopaction'  hidden="{{!startHide}}"  catchtap="clear">结束</view>
+    <view class='stopaction' style="margin-left:50rpx"   hidden="{{!startHide}}" catchtap="continue"> 继续</view>
+  </view>
+</view>
+
+<!-- 对话窗口 -->
+<view hidden='{{YC}}' bindtap='TC'  style='position: fixed; opacity:1; bottom:0rpx;height:100% ;width:750rpx; background: rgba(0, 0, 0, 0.5); ' >
+<view hidden='{{YC}}' catchtap='AA' class="ra-20"  style='position: fixed; opacity:1; bottom:{{winHeight*0.5}}rpx;height:104rpx;width:710rpx;left: 20rpx; background: #FFFFFF;display:flex;flex-direction:row'>
+<view class='ma-t20 ma-r20 ra-10'  style='background: #EDEDED;height:70rpx;margin-left:25rpx'>
+ <input class='fo-30 fo-g  z-7'  style='height:70rpx;width:500rpx;margin-left:40rpx'  placeholder="输入目标名称..."bindinput="getcontent" auto-focus="{{true}}"></input>
+</view>
+<view  class=' ra-10 ma-l20 ma-t30' style='color:	#FFD700;height:60rpx'bindtap="subcontent" >
+ <text class=' main'> 确定 </text>
+</view>
+</view>
+</view>

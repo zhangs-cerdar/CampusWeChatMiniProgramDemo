@@ -1,0 +1,26 @@
+<!--pages/index/login.wxml-->
+<!-- 已授权 -->
+<view hidden="{{!isShow}}" >
+  <image src="/img/sp.jpeg" mode="widthFix" style="width:750rpx;"></image>
+
+  <view class='-dir sqq'>
+  <image class='a01' src='/img/icon_logo.png'></image>
+  <view class='dir'>
+  <text class='wenzi01'> 校园N多</text>
+  <text class='wenzi02'>校园生活应有尽有</text>
+  </view>
+</view>
+
+</view>
+<view  hidden="{{isShow}}" >
+ 
+<view class="header" style="width:177rpx;height:177rpx;">
+ <open-data  type="userAvatarUrl" ></open-data>
+</view>
+<view class="wz ma-t20 ">
+<open-data type="userNickName" lang="zh_CN"></open-data>
+</view>
+
+ <button class="sq fo-36 fo-w" open-type="getUserInfo" bindgetuserinfo='getUser' style="">获取用户信息(授权登录)</button>
+
+</view>

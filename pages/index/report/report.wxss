@@ -1,0 +1,44 @@
+Page{
+  justify-content: center;
+}
+
+.title{
+  margin-left:40rpx;
+  color: 	#696969;
+  font-size: 35rpx;
+}
+
+.content{
+  width: 310rpx;
+  height: 60rpx;
+  display: flex;
+  border-radius: 40rpx;
+  justify-content: center;
+  align-content: center;
+  border: 2rpx solid rgb(88, 80, 80);
+  color: rgb(88, 80, 80);
+  margin: 20rpx;
+}
+.chosen{
+  width: 310rpx;
+  height: 60rpx;
+  display: flex;
+  border-radius: 20rpx;
+  justify-content: center;
+  align-content: center;
+  border: 2rpx solid rgb(30, 30, 211);
+  color: rgb(30, 30, 211);
+  margin: 20rpx;
+}
+.submit{
+  width: 600rpx;
+  height: 80rpx;
+  display: flex;
+  font-size: 40rpx;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  margin-top: 90rpx;
+  background-color: #6495ED	;
+  border-radius: 10rpx;
+}

@@ -1,0 +1,199 @@
+
+<!-- 头像 -->
+ <scroll-view scroll-y="true"style="height:{{winHeight}}rpx"  lower-threshold="100" >
+<view class="border-bb pa-b20 bg-w">
+<view class=" panel panel-between  item-center ma-l20 ma-r20">
+ <view class='panel-start item-center'bindtap='ToPersonaldetail'>
+ <image class="ra-y icon-70 " src='{{curcircle.userAvatar}}'  mode='aspectFill'  ></image>
+ <!-- 名字 -->
+ <view class="ma-l20"><view class="fo-30 ">{{curcircle.userName}}</view>
+ <!-- 时间 -->
+  <view class="fo-20 fo-g ">{{curcircle.createdDate}}</view>
+ </view>
+ </view>
+ <!-- 关注与取消关注 -->
+   <block wx:if="{{!curcircle.anonymous}}">
+      <view wx:if="{{curcircle.followed && !curcircle.myself }}" class="section1-unconcern ra-30" bindtap="unFollow" >已关注</view>
+      <view wx:if="{{!curcircle.followed && !curcircle.myself }}"  class="section1-concern bold ra-30" bindtap="follow">关注</view>
+        </block>
+    </view>
+
+ <!-- 帖子内容 -->
+ <view wx:if='{{curcircle.content}}' class="fo-30 content ma-l20">{{curcircle.content}}</view>
+
+ <!-- 图片 -->
+ <!-- 图片布局 -->
+ <block wx:if ='{{curcircle.attachments[0].type== "image"}}'>
+  <view class='ma-l20'>
+ 
+  <!-- section5-图片 -1 -->
+  <view class="grid"  wx:if="{{curcircle.attachments.length ==1 }}"  >
+    <block  class="" wx:for="{{curcircle.attachments}}" wx:key="" wx:for-index="aa" >
+
+        <!-- 当宽高比<0.25时 -->
+  <view style="position:relative;width:710rpx;height:177.5rpx;"  wx:if="{{item.originalScale <=0.25 }}"  >
+    <image lazy-load  catchtap="img_view" data-url="{{item.url}}"data-index="{{index}}" mode="aspectFill"  src='{{item.url}}'></image>
+  </view>
+                       
+      <!-- 当宽高比<1时 -->
+  <view style="position:relative;width:710rpx;height:{{710*(item.originalScale)}}rpx;"  wx:if="{{item.originalScale >0.25 && item.originalScale <=1 }}"  >
+    <image lazy-load  catchtap="img_view" data-url="{{item.url}}"data-index="{{index}}"    src='{{item.url}}'></image>
+  </view>
+
+   <!-- 当宽高比<4时 -->
+    <view style="position:relative;width:{{800/(item.originalScale)}}rpx;height:800rpx;"  wx:if="{{ item.originalScale >1&& item.originalScale <=4 }}"  >
+    <image lazy-load  catchtap="img_view" data-url="{{item.url}}"data-index="{{index}}"    src='{{item.url}}'></image>
+   </view>
+    <!-- 当宽高比>4时 -->
+    <view style="position:relative;width:200rpx;height:800rpx;"  wx:if="{{ item.originalScale >4}}"  >
+    <image lazy-load  catchtap="img_view" data-url="{{item.url}}"data-index="{{index}}"  mode="aspectFill"    src='{{item.url}}'></image>
+   </view>
+   </block>
+   
+  </view>
+
+
+  <!-- section5-图片 -3 -->
+  <view class="grid"  wx:if="{{curcircle.attachments.length ==3}}"  >
+    <block  class="" wx:for="{{curcircle.attachments}}" wx:key=""  wx:for-index="aa"  >
+    <image lazy-load="true"  catchtap="img_view" data-url="{{item.url}}"data-index="{{index}}"   class="section5-img5" src='{{item.url}}' mode='aspectFill'></image>
+   </block>  
+  </view> 
+ <!-- section5-图片 -2和4 -->
+  <view class="grid"  wx:if="{{curcircle.attachments.length ==4 || curcircle.attachments.length ==2 }}"  >
+    <block  class="" wx:for="{{curcircle.attachments}}" wx:key=""  wx:for-index="aa" >
+    <image lazy-load="true" catchtap="img_view" data-url="{{item.url}}"data-index="{{index}}"  class="section5-img4" src='{{item.url}}' mode='aspectFill'></image>
+   </block>  
+  </view> 
+   <!-- section5-图片 -5-9 -->
+  <view class="grid"  wx:if="{{curcircle.attachments.length <=9 && curcircle.attachments.length >=5 }}"  >
+    <block  class="" wx:for="{{curcircle.attachments}}" wx:key=""  wx:for-index="aa" >
+    <image lazy-load="true" catchtap="img_view" data-url="{{item.url}}"data-index="{{index}}"  class="section5-img5" src='{{item.url}}' mode='aspectFill'></image>
+   </block>  
+     <block wx:if ='{{item.attachments[0].type== "video"}}'>
+                        <!-- {{(item.attachments[0].originalScale)}} -->
+<video wx:if='{{(item.attachments[0].originalScale)<0.6}}' src="{{item.attachments[0].url}}" 
+style="height:1000rpx;" ></video>
+<video wx:if='{{(item.attachments[0].originalScale)>=0.6 && (item.attachments[0].originalScale)<1 }}' style="height:750rpx;" src="{{item.attachments[0].url}}" ></video>
+<video wx:if='{{(item.attachments[0].originalScale)> 1 && (item.attachments[0].originalScale)<1.5 }}' style="height:750rpx;" src="{{item.attachments[0].url}}" ></video>
+<video wx:if='{{(item.attachments[0].originalScale)> 1.5}}' style="width:700rpx;" src="{{item.attachments[0].url}}" ></video>
+</block>
+  </view> 
+  </view> 
+</block>
+</view>
+<!-- 评论内容 -->
+<!-- <view wx:if='{{curcircle.commentCount==0}}' class="fo-32 main ma-30 fo-g ">  暂无评论哟~ </view>
+<view wx:if='{{curcircle.commentCount!=0}}' class="fo-36 ma-l20  ma-30  bold"> 评论 {{curcircle.comments.length}} </view> -->
+<scroll-view scroll-x="true" class="tab-h border-b" >
+     <text class=' {{currentTab==0?"active":"unactive"}}' data-aa="0" bindtap="swichNav">评论{{curcircle.commentCount}}</text>
+     <text class=' {{currentTab==1?"active":"unactive"}}' style="margin-left:160rpx" data-aa="1" bindtap="swichNav">点赞{{likeUsers.length}}</text>
+</scroll-view>
+
+
+<!-- 内容 -->
+<swiper current="{{currentTab}}" duration="300" bindchange="swiperTab"   style="height:700rpx">
+  <swiper-item>
+   <scroll-view scroll-y="true"style="height:700rpx"  lower-threshold="100" bindscrolltolower="loadMore">
+   <!-- 评论内容 -->
+<view class="comment-section4 ma-l20 ma-b120" wx:if="{{curcircle.comments.length!=0}}">
+        <block wx:for="{{curcircle.comments}}" wx:key='' wx:for-item="temcomments"  wx:for-index="index1">
+          <block wx:for="{{temcomments}}" wx:for-item="meitem" wx:for-index="index2">
+          <view wx:if="{{meitem.replyCommentId == 0}}" class="s4-evecomment" >
+           <view class="s4-com_left"><image src="{{meitem.userAvatar}}" bindtap="InterToPersonaldetail"  data-userid="{{meitem.userId}}" data-myself="{{meitem.myself}}" mode='aspectFill'/></view>
+           <view  class="s4-com_right"> 
+             <view class="s4-reply_info">
+                <view class="s4-username">{{meitem.userName}}</view>
+                <view class="s4-replytime"> {{meitem.createdDateLabel}}</view>
+              </view>  
+              <label  class="s4-com_content" bindtap='replycomment'data-index1="{{index1}}" data-index2="{{index2}}" >{{meitem.content}}</label>    
+           </view>
+          </view>
+          <view wx:else class="s4-evecomment">
+            <view class="s4-com_left"><image src="{{meitem.userAvatar}}"  mode='aspectFill'  bindtap="InterToPersonaldetail"  data-userid="{{meitem.userId}}" data-myself="{{meitem.myself}}"  /></view>
+            <view  class="s4-com_right">   
+              <view class="s4-reply_info">
+                <view class="s4-username">{{meitem.userName}}</view>
+                <view class="s4-replytime"> {{meitem.createdDateLabel}}</view>
+              </view>  
+              <view class="s4-reply_content">  
+                <label class="s4-com_content">回复</label>                                      
+                <label class="s4-username">{{meitem.replyUserName}}</label>    
+                <label  class="s4-com_content" data-index1="{{index1}}" data-index2="{{index2}}"bindtap='replycomment' >{{meitem.content}}</label>    
+              </view>
+            </view> 
+          </view>
+           </block>
+        </block>
+</view> 
+</scroll-view>
+  </swiper-item>
+  <swiper-item>
+   <scroll-view scroll-y="true"style="height:700rpx"  lower-threshold="100" bindscrolltolower="loadMore">
+ <view style="margin-left:60rpx;margin-top:20rpx;margin-right:40rpx">
+  <view wx:for="{{likeUsers}}" >
+   <view class='panel item-center border-b pa-l40 pa-r40 panel-start' bindtap="InterToPersonaldetail"  data-userid="{{item.userId}}" data-myself="{{item.myself}}"  >
+      <image src='{{item.avatar}}' class='icon-70 ra-y'></image>
+      <view style="margin-left:60rpx;font-size:40rpx">{{item.username}}</view>
+    </view>
+  </view>
+</view>
+</scroll-view>
+  </swiper-item>
+</swiper>
+
+
+<!-- 评论窗口 -->
+<!-- <view class="btn-fastphoto" bindtap="uploadPhoto">快拍</view> -->
+<view  class="bottom-section5">
+  <image class="s5-avatar" src="{{ myavatar}}"/>
+  <view class="s5-input_model" bindtap='TC' >来说点什么吧</view>
+  <view class="s5-interaction">
+      <!-- 点赞 -->
+     <view class="group">
+        <view class="icon">
+          <image wx:if="{{curcircle.liked}}" class="icon  " src="/img/like.png" catchtap="unPraise"></image>
+          <image wx:if="{{!curcircle.liked}}"class="icon" src="/img/unlike.png" catchtap="toPraise"/>
+        </view>
+      </view>
+        <!-- 收藏 -->
+      <view class="group1" >
+        <view class="icon" >
+          <image class="icon magic2" wx:if="{{curcircle.collected}}" src="/img/collection.png"  catchtap="unCollect" ></image>
+          <image wx:else class="icon" src="/img/uncollection.png"  catchtap="tocollect" ></image>
+        </view>
+      </view>
+        <!-- 评论 -->
+       <view class="group2">
+        <view class="icon" >
+          <image class="icon"  wx:if="{{curcircle.commentCount == 0}}" src="/img/uncomment.png" ></image>
+          <image class="icon"  wx:else src="/img/icon_comment.png" ></image>
+        </view> 
+      </view>
+  </view>
+</view> 
+<!-- <view class="btn-fastphoto2" >
+<view class='ma-10 ra-120 fo-32 fo-g lh-80 ' style='background: #EDEDED;height:80rpx; ' bindtap='TC' >
+<text class='ma-l30'> 输入内容... </text></view>
+</view> -->
+
+
+<!-- 对话窗口 -->
+<view hidden='{{YC}}' bindtap='TC'  style='position: fixed; opacity:1; bottom:0rpx;height:100% ;width:750rpx; background: rgba(0, 0, 0, 0.5); ' >
+<view hidden='{{YC}}' catchtap='AA' class="ra-20"  style='position: fixed; opacity:1; bottom:{{winHeight*0.5}}rpx;height:244rpx ;width:710rpx;left: 20rpx; background: #FFFFFF; '>
+<!-- 评论和关闭按钮 -->
+<view class='hx ma-t20 '>
+<view  class="fo-34 fo-whith " style='margin-left:310rpx;'><text class='main'> 评论 </text></view>
+<image class='icon-30 'style='margin-left:240rpx;' src='/img/shanchu2.png' catchtap='TC'></image> 
+</view>
+<view class='ma-t20 ma-r20 ma-l20 ra-10'  style='background: #EDEDED;height:70rpx; '>
+ <input class='fo-30 fo-g ma-l10 z-7'  style='height:70rpx'   placeholder="{{holdercontent}}" bindinput="getcontent" value="{{newComment}}" auto-focus="{{true}}"></input>
+</view>
+<!-- 发送按钮 -->
+<view class=' ra-10 ma-r20' style='background: #ec304c;height:60rpx;margin-left:570rpx;margin-top:15rpx '>
+ <text class='fo-w lh-60 fo-30 main' bindtap="submit"> 发送 </text>
+</view>
+</view>
+</view>
+
+</scroll-view>

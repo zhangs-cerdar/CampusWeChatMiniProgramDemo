@@ -1,0 +1,30 @@
+
+    <view wx:if="{{canIUse}}" >
+
+         <view class="header"  >
+          <open-data class="" type="userAvatarUrl" ></open-data>
+          </view>
+           <!-- 输入昵称 -->
+            <view class='form'>
+            <open-data type="userNickName" lang="zh_CN"></open-data>  
+            </view> 
+
+        <view class='content'>
+            <view class="content-wz1" >申请获取以下权限</view>
+            <text class="content-wz2" >获得你的公开信息(昵称，头像等)</text>
+        </view>
+
+        <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+            授权登录
+        </button>
+    </view>
+    <view wx:else>请升级微信版本</view>
+
+
+
+
+
+
+  
+  
+

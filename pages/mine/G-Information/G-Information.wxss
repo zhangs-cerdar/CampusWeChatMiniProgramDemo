@@ -1,0 +1,29 @@
+page{
+  background-color: #f3f3f3
+}
+
+/* .backgound-c{
+background:
+} */
+.sex-wz{
+  padding-left: 260rpx;
+
+}
+.btnszz{
+line-height: 90rpx;
+text-align: center;
+color: #fff;
+font-size: 30rpx;
+border-radius: 100rpx;
+background: linear-gradient(to right top,#FEE126,#FEE126);
+margin-top: 80rpx;
+
+}
+button::after{
+  border: none;
+
+}
+/* button{
+    border-radius: 0;
+} */
+

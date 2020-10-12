@@ -1,0 +1,25 @@
+<!--pages/logon/education/education.wxml-->
+<!-- 校徽 -->
+<view class='-dir'>
+<image class='a01' src='/img/xiaohui.png'></image>
+<text class='wenzi01'>常熟理工学院</text>
+</view>
+<view class='jiange01'></view>
+
+<!-- 学历 -->
+<view class='dir'>
+<!--  -->
+ <view class='' bindtap='goToFirst1'>
+  <text class='wenzi'  >本科</text> 
+ </view>
+  <view class='xian'></view>
+<!--  -->
+
+ <view class='' bindtap='goToFirst2'>
+ <text class='wenzi'>专科</text>
+ </view>
+ 
+ 
+ <view class='jiange02'></view>
+ 
+</view>

@@ -1,0 +1,4 @@
+<!--pages/mine/D-gongneng/xiaoli/xiaoli.qml-->
+<view class="ma-30" >
+<image style="width:690rpx;" src="/img/19-20xiaoli.jpg" mode="widthFix"></image>
+</view>

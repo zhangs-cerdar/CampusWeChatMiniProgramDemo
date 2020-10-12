@@ -1,0 +1,58 @@
+{
+  "pages": [
+      "pages/index/login",
+    "pages/index/index",
+    "pages/His-page/His-page",
+    "pages/index/circledetail/circledetail",
+    "pages/index/report/report",
+    "pages/mine/mine",
+    "pages/middle/middle",
+    "pages/middle-select/middle-select",
+    "pages/logon/landing/landing",
+    "pages/mine/G-Information/G-Information",
+    "pages/logon/logon-check/logon-check",
+    "pages/logon/college/college",
+    "pages/logon/year/year",
+    "pages/logon/education/education",
+    "pages/logon/avatar/avatar",
+    "pages/mine/B-Attention/B-Attention",
+    "pages/mine/C-Fans/C-Fans",
+    "pages/mine/A-post/A-post",
+    "pages/mine/I-Collection/I-Collection",
+    "pages/mine/J-Set/J-Set",
+    "pages/logon/login/login",
+    "pages/mine/D-gongneng/xiaoli/xiaoli",
+    "pages/mine/G-Information/major/major",
+    "pages/mine/G-Information/academy/academy",
+    "pages/mine/G-Information/education/education",
+    "pages/mine/G-Information/enrolmentDate/enrolmentDate",
+    "pages/mine/D-gongneng/shizhong"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "校园N多",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/img/icon_home.png",
+        "selectedIconPath": "/img/icon_home_HL.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/img/icon_mine.png",
+        "selectedIconPath": "/img/icon_mine_HL.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

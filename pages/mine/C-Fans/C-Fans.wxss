@@ -1,0 +1,66 @@
+/* pages/mine/C-Fans/C-Fans.wxss */
+.section1{
+display: flex;
+flex-direction: column;
+}
+.section1-1{
+  display: flex;
+flex-direction: row;
+}
+.section1-img{
+  width: 100rpx;
+  height: 100rpx;
+
+  margin-top: 20rpx;
+  border-radius: 50%;
+  
+}
+.section1-img2{
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  left: 95rpx;
+  margin-top: 80rpx;
+}
+.section1-wz{
+ font-size:32rpx;
+ line-height:60rpx;
+ margin-left: 28rpx;
+ margin-top: 40rpx;
+}
+/* 已关注样式 */
+.section1-gz{
+  position: absolute;
+  width: 200rpx;
+  height: 70rpx;
+  margin-top: 35rpx;
+  left:520rpx;
+  /* 已关注字 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #CCCCCC;
+}
+.section1-gz-wz{
+  font-size:30rpx;
+  color: #FFFFFF;
+}
+/* 需关注样式 */
+.section1-gz2{
+  position: absolute;
+  width: 200rpx;
+  height: 70rpx;
+  margin-top: 35rpx;
+  left:520rpx;
+  /* 需关注字 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #1B9AF4;
+}
+.section1-gz-wz2{
+  font-size:30rpx;
+  color: #FFFFFF;
+}

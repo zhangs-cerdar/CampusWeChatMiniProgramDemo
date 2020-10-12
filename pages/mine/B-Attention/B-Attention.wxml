@@ -1,0 +1,62 @@
+<!--pages/mine/B-Attention/B-Attention.qml-->
+
+<!-- section1 -->
+<view class="section1 ma-l30 ma-r30 ma-b30 " >
+
+  <view class="section1-1 pa-b20 border-b" wx:for="{{myFollow}}" wx:key=""  >
+  <!-- 点击头像姓名区域跳转至详情页面 -->
+    <view class="section1-1"   data-userid="{{item.id}}" bindtap="tiaozhuan">
+     <!--头像  -->
+     <image class="section1-img" src="{{item.userAvatar}}" mode="aspectFill"></image>
+     <!-- 姓名 -->
+     <view class="section1-wz" >{{item.username}}</view>
+   </view> 
+    <!-- 性别 -->
+   
+     <block wx:if="{{item.gender == 1}}" >
+      <image class="section1-img2"  src="/img/male.png"> </image>
+     </block>
+     <block wx:if="{{item.gender == 0}}" >
+      <image class="section1-img2" src="/img/famale.png"> </image>
+     </block>
+ 
+
+    <!--  关注按钮 -->
+  <!-- 已关注 -->
+  <block wx:if="{{item.followed}}" >
+   <view class="section1-gz"bindtap="unFollow" data-index="{{index}}" >
+     <view class="section1-gz-wz"  >已关注</view>
+   </view>
+  </block>
+<!-- 需关注 -->
+  <block wx:if="{{!item.followed}}" >
+   <view class="section1-gz2"bindtap="follow" data-index="{{index}}">
+   <view class="section1-gz-wz2"> 关注</view>
+   </view>
+  </block>
+  
+</view></view>
+
+
+<view class="panel-center item-center"  style='padding:30rpx;padding-top:0 '>
+  <view class='fg1'></view>
+  <view class='fg2'>我是有底线的</view>
+  <view class='fg1'></view>
+</view>
+
+ 
+
+
+ 
+
+
+
+
+
+ 
+
+
+
+
+ 
+

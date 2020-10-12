@@ -1,0 +1,59 @@
+<!--pages/logon/logon-check/logon-check.wxml-->
+<!-- 提示 -->
+<view class='t01'><text class='wenzi01'>学籍信息对我们非常重要，请核对准确。</text></view>
+
+<!-- 信息 -->
+
+
+
+<view class='jiange01'></view>
+<view class='dir'>
+   <!-- 学院 -->
+  <view class='-dir'>
+  <text class='wenzi02'>学校</text>
+  <text class='wenzi03'>常熟理工学院</text>
+
+  </view> 
+  <view class='xian'></view>
+  <!-- 院系 -->
+  <view class='-dir' bindtap='select'>
+ 
+  <text class='wenzi02'>院系</text>
+  <text class='wenzi03'>{{yuanxi}}</text>
+  <image class='a01' src='/img/jiantou.png'></image>
+  </view>
+  <view class='xian'></view>
+  <!--入学年份 -->
+  <view class='-dir' bindtap='select02'>
+  
+  <text class='wenzi02'>入学年份</text>
+  <text class='wenzi03'>{{nianfen}}</text>
+  <image class='a01' src='/img/jiantou.png'></image>
+  </view>
+  <view class='xian'></view>
+  <!-- 学历 -->
+  <view class='-dir' bindtap='select03'>
+  <text class='wenzi02'>学历</text>
+  <text class='wenzi03'>{{xueli}}</text>
+  <image class='a01' src='/img/jiantou.png'></image>
+  </view>
+  <view class='xian'></view>
+
+
+   <!-- 提交按钮 -->
+   <view class='jiange01'></view>
+  <!-- 禁止按钮 -->
+  <view wx:if="{{yuanxi == '选择学院' || nianfen== '入学年份' ||  xueli == '本科/专科'}}" >
+  <button class='denglu' bindtap='tiaozhuan1'  type="default" disabled="true"    > 
+   <text class='wenzi05'> 提交 </text>
+  </button> 
+  </view>
+ <!-- 出现按钮 -->
+  <view wx:if="{{yuanxi != '选择学院' && nianfen!= '入学年份' &&  xueli != '本科/专科'}}" >
+   <button class='denglu' bindtap='tiaozhuan'  type="" disabled=""    > 
+   <text class='wenzi04'> 提交 </text>
+   </button> 
+  </view>
+
+  <view class='jiange01'></view>
+</view>

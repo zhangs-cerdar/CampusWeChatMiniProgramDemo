@@ -1,0 +1,57 @@
+<!--pages/logon/year/year.wxml-->
+<!-- 校徽 -->
+<view class='-dir'>
+<image class='a01' src='/img/xiaohui.png'></image>
+<text class='wenzi01'>常熟理工学院</text>
+</view>
+<view class='jiange01'></view>
+
+<!-- 年份 -->
+<view class='dir'>
+<!-- 2020 -->
+ <view class='' bindtap='goToFirst1'>
+  <text class='wenzi'  >2020年</text> 
+ </view>
+  <view class='xian'></view>
+<!-- 2019 -->
+
+ <view class='' bindtap='goToFirst2'>
+ <text class='wenzi'>2019年</text>
+ </view>
+  <view class='xian'></view>
+ <!--  -->
+ 
+ <view class='' bindtap='goToFirst3'>
+ 
+ <text class='wenzi'  >2018年</text>
+ </view>
+  <view class='xian'></view>
+  <!--  -->
+  
+<view class=''  bindtap='goToFirst4'>
+ 
+ <text class='wenzi' >2017年</text>
+ </view> 
+<view class='xian'></view>
+<!--  -->
+
+ <view class=''bindtap='goToFirst5'>
+ <text class='wenzi'  >2016年</text>
+ </view>
+<view class='xian'></view>
+<!--  -->
+<view class=''bindtap='goToFirst6'>
+
+ <text class='wenzi'  >2015年</text>
+ </view>
+ <view class='xian'></view>
+<!--  -->
+ <view class=''bindtap='goToFirst7'>
+
+ <text class='wenzi'  >2014年</text>
+ </view>
+  
+ <view class='jiange02'></view>
+ 
+</view>
+

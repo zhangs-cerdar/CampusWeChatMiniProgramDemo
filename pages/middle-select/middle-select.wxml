@@ -1,0 +1,61 @@
+<!--pages/middle-select/middle-select.wxml-->
+<view class='xian2'></view>
+
+<view class='radio'>
+<!-- 开学季 -->
+
+<view class='-radio'  bindtap='goToFirst1'>
+ <image class='huati' src="https://tianniuschool.oss-cn-hangzhou.aliyuncs.com/icon_catg_back_to_school.jpg"></image> 
+  <text class='wenzi'  >开学季</text> 
+</view>
+
+<!-- 表白墙 -->
+<view class='xian'></view>
+ <view class='-radio' bindtap='goToFirst2'>
+ <image class='huati' src="https://tianniuschool.oss-cn-hangzhou.aliyuncs.com/icon_catg_white_wall.jpg"></image>
+ <text class='wenzi'   >表白墙</text>
+ </view>
+
+ <!-- 二手市场 -->
+ <view class='xian'></view>
+ <view class='-radio' bindtap='goToFirst3'>
+ <image class='huati' src="https://tianniuschool.oss-cn-hangzhou.aliyuncs.com/icon_catg_second_hand.jpg"></image>
+ <text class='wenzi'  >二手市场</text>
+ </view>
+
+  <!-- 考研 -->
+  <view class='xian'></view>
+  <view class='-radio'  bindtap='goToFirst4'>
+    <image class='huati' src="https://tianniuschool.oss-cn-hangzhou.aliyuncs.com/icon_catg_postgraduate.jpg"></image>
+    <text class='wenzi' >考研狗</text>
+ </view> 
+
+<!-- 社团招新 -->
+<view class='xian'></view>
+<view class='-radio'bindtap='goToFirst5'>
+ <image class='huati' src="https://tianniuschool.oss-cn-hangzhou.aliyuncs.com/icon_catg_overseas_study.jpg"></image>
+ <text class='wenzi'  >社团招新</text>
+ </view>
+
+ <!-- 学生会招新 -->
+<view class='xian'></view>
+<view class='-radio'bindtap='goToFirst6'>
+ <image class='huati' src="https://tianniuschool.oss-cn-hangzhou.aliyuncs.com/icon_catg_overseas_study.jpg"></image>
+ <text class='wenzi'  >学生会招新</text>
+ </view>
+
+ <!--毕业季 -->
+  <view class='xian'></view>
+  <view class='-radio'bindtap='goToFirst7'>
+  <image class='huati' src="https://tianniuschool.oss-cn-hangzhou.aliyuncs.com/icon_catg_overseas_study.jpg"></image>
+  <text class='wenzi'  >毕业季</text>
+  </view>
+
+   <!--留学 -->
+  <view class='xian'></view>
+  <view class='-radio'bindtap='goToFirst8'>
+  <image class='huati' src="https://tianniuschool.oss-cn-hangzhou.aliyuncs.com/icon_catg_overseas_study.jpg"></image>
+  <text class='wenzi'  >留学</text>
+  </view>
+
+  </view>
